@@ -45,7 +45,7 @@ def bfs(s):
         remaining_words, categories = q.popleft()
         if len(remaining_words) == 4:
             ans.append(categories + '\n' + 'REMAINDER: ' + ', '.join(remaining_words))
-        for group in [x for x in gen_groups(remaining_words, n=2) if value(remaining_words, x) > 0.5]:
+        for group in [x for x in gen_groups(remaining_words, n=3) if value(remaining_words, x) > 0.5]:
             _, words = group.split(':')
             new_remaining_words = remaining_words - {w.strip() for w in words.split(',')}
             key = ', '.join(sorted(new_remaining_words))
