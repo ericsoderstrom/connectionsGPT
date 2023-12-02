@@ -1,5 +1,6 @@
 import os
 import openai
+import backoff
 
 api_key = os.getenv("OPENAI_API_KEY", "")
 if api_key != "":
@@ -7,6 +8,7 @@ if api_key != "":
 else:
     print("Warning: OPENAI_API_KEY is not set")
 
+@backoff.on_exception(backoff.expo, openai.error.OpenAIError, max_time=60)
 def gpt(prompt, model="gpt-3.5-turbo", temperature=0.7, max_tokens=1000, n=1, stop=None):
     messages = [{"role": "user", "content": prompt}]
     global completion_tokens, prompt_tokens
