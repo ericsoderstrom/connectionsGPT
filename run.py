@@ -53,8 +53,11 @@ def bfs(s):
             visited.add(key)
             q.append((new_remaining_words , categories + '\n' + group))
         
-    print('Possible word groupings:\n')
-    print('\n'.join(ans))
+    if not ans:
+        print('Unable to find any valid groupings')
+    else:
+        print('Possible word groupings:\n')
+        print('\n'.join(ans))
 
 words = [w.upper() for w in sys.argv[1:]]
 if len(words) != 16:
