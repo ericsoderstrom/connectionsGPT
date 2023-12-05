@@ -6,6 +6,13 @@ import utils
 weights = {'sure': 2, 'maybe': 1, 'impossible': 0}
 value_cache = dict()
 
+def grouping_hash(s):
+    res = []
+    for row in s.strip().split('\n'):
+        _, words = row.split(':')
+        res.append(' '.join(sorted(w.strip() for w in words.split(', '))))
+    return ' '.join(sorted(res))
+
 def value(remaining_words, group, n=3):
     if ':' not in group: return 0
 
@@ -44,14 +51,16 @@ def bfs(s):
     while q:
         remaining_words, categories = q.popleft()
         if len(remaining_words) == 4:
-            ans.append(categories + '\n' + 'REMAINDER: ' + ', '.join(remaining_words))
-        for group in [x for x in gen_groups(remaining_words, n=3) if value(remaining_words, x) > 0.5]:
-            _, words = group.split(':')
-            new_remaining_words = remaining_words - {w.strip() for w in words.split(',')}
-            key = ', '.join(sorted(new_remaining_words))
-            if key in visited: continue
-            visited.add(key)
-            q.append((new_remaining_words , categories + '\n' + group))
+            key = categories + '\n' + 'REMAINDER: ' + ','.join(remaining_words)
+            if grouping_hash(key) in visited:
+                continue
+            visited.add(grouping_hash(key))
+            ans.append(key)
+        else:
+            for group in [x for x in gen_groups(remaining_words, n=2) if value(remaining_words, x) > 0.5]:
+                _, words = group.split(':')
+                new_remaining_words = remaining_words - {w.strip() for w in words.split(',')}
+                q.append((new_remaining_words , categories + '\n' + group))
         
     if not ans:
         print('Unable to find any valid groupings')

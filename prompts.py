@@ -106,8 +106,12 @@ Although FLUSH is related to the bathroom it is not an item. FAMILY, WE, and JEL
 impossible
 
 VARIOUS: DUST, LIFE, SPORTS, YELLOW
-The category "various" is too vague to know whether these four words are closely related or not
-maybe
+The category "various" is too vague to be a proper category
+impossible
+
+WORDS THAT CAN BE VERBS OR NOUNS: CLINCH, GUARANTEE, LOCK, STATE
+This category is not specific enough to be a proper group
+impossible
 
 FARM LIFE: BARN, CHICKEN, FARMER, TRACTOR
 A chicken, farmer, tractor and barn could all be found on a farm. These four words are closely related.
@@ -130,16 +134,24 @@ Although LILY PAD, MOUSE PAD, and MAXI PAD are all in-the-language phrases, PAN 
 impossible
 
 SINGLE SYLLABLE VERBS: DOG, JERK, SIT, TOE
-The category "single syllable verbs" is too general and cannot conclusively determine if these words belong together or not.
-maybe
+The category "single syllable verbs" is too general to be a proper category
+impossible
 
 COOKING METHODS: CHOPPED, PAN, ROAST, SLAM
 SLAM is not a cooking method
 impossible
 
 SINGLE SYLLABLE VERBS: BUZZ, DISH, SCOOP, SKINNY
-'SINGLE SYLLABLE VERBS' is too general, so it is unclear whether these four words are closely related or not.
-maybe
+'SINGLE SYLLABLE VERBS' is too general to be a proper category
+impossible
+
+VERBS: NICK, SCRATCH, STEAM, STATE
+"VERBS" is too vague to be a proper category
+impossible
+
+VERBS OF ACTION: CHIP, MARK, STATE, STEAM
+"VERBS OF ACTION" is too vague to be a proper category
+impossible
 
 {input}
 '''
