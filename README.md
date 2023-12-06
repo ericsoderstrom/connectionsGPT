@@ -34,5 +34,5 @@ REMAINDER: TRUNK, ROOT, BUZZ, BRANCH
 
 It takes several minutes for the program to finish running. It will print intermediate output during execution.
 
-The fourth word grouping category will always be labeled 'REMAINDER' and doesn't directly contribute to the scoring of the answer. This gives the solver to produce the correct solution even if it can only accurately identify 3 of the 4 categories.
+The fourth word grouping category will always be labeled 'REMAINDER' and doesn't directly contribute to the scoring of the answer. This gives the solver latitude to produce the correct solution even if it can only accurately identify 3 of the 4 categories.
 If running tests against past NYT Connections puzzles, please make sure the puzzle input you're using doesn't appear in `prompts.py`... otherwise results won't be representative.
